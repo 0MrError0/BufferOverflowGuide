@@ -34,6 +34,6 @@
 
 ### As we Now know that the .exe is serving on port 9999 now let us Fuzz the input of the brainpan.exe 
 
-***What is Fuzzing ?
-In programming and software development, fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. The program is then monitored for exceptions such as crashes, failing built-in code assertions, or potential memory leaks. Typically, fuzzers are used to test programs that take structured inputs (Shameless copied from Wikipedia)*** 
+***What is Fuzzing ? <br />
+In programming and software development, fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. The program is then monitored for exceptions such as crashes, failing built-in code assertions, or potential memory leaks. Typically, fuzzers are used to test programs that take structured inputs <br /> (Shameless copied from Wikipedia)*** 
 
