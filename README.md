@@ -75,7 +75,7 @@ while True:
 
 ![Fuzz](https://user-images.githubusercontent.com/102399357/232196177-caed504b-2f25-4b97-bda8-55a3b546e20b.PNG)
 
-### As Soon as we run the script we see that the .exe Program gets Crashed at  600 bytes As We can see that the all the registors and EIP is Also overwritten with "A"'s <br />
+### As Soon as we run the script we see that the .exe Program gets Crashed at  600 bytes As We can see that the all the registors and EIP is Also gets overwritten with 41 which is "A" in hex format  <br />
 
 ![immuFuzz](https://user-images.githubusercontent.com/102399357/232196264-1670e72a-9ea2-4fdb-97ef-0f0dfb3109e3.PNG)
 
