@@ -208,13 +208,18 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
-**Now if We Right click Over EDX Registor and cick on Follow in Dump and Scroll Down Until You See 01 02 ... till FF As i have Mentioned in the Below Video **
+**Now if We Right click Over EDX Registor and cick on Follow in Dump and Scroll Down Until You See 01 02 ... till FF As i have Mentioned in the Below Video**
 
 <br />
 
-![gif_dump_Moment](https://user-images.githubusercontent.com/102399357/232206690-6e970833-cbff-44a7-98bf-3424937bcf9e.jpg)
+![gif_dump_Moment](https://user-images.githubusercontent.com/102399357/232206950-30839443-b3d2-470e-a91c-fd016f6a3d49.jpg)
+
 
 **After the AAAAAA we see that 01 02 ..FF is begin Present.**
 
-![bad_dump](https://user-images.githubusercontent.com/102399357/232206759-d0d54c61-814b-4d9b-bb90-0cba2fea33b1.jpg)
+![bad_dump](https://user-images.githubusercontent.com/102399357/232206958-e31fd2a1-ea42-4f67-85cf-ed665eecb623.jpg)
+
+
+**If Youll Want To use mona Modules then youll can go for it**
+
 
