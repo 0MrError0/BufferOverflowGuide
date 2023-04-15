@@ -42,7 +42,7 @@ In programming and software development, fuzzing or fuzz testing is an automated
 ## Step 1 Fuzzing <br />
 ### The Following Python Script is Useed to Fuzz The brainpan.exe service <br />
 
-```
+```python
 import socket
 import sys
 import time
