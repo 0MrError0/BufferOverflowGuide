@@ -156,7 +156,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
-###Now we have found Our Offset which is 524 Now if We Write Anything more than 524 Bytes it will be overwrittend on EIP Register.
+### Now we have found Our Offset which is 524 Now if We Write Anything more than 524 Bytes it will be overwrittend on EIP Register.
 
 
  
