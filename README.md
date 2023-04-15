@@ -133,7 +133,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 ![imut_cyclic](https://user-images.githubusercontent.com/102399357/232202522-273177b5-403f-4766-b06a-34b2262fca47.png)
  
- **in my case the EIP value is 35724134 now in the he stack the value is stored in the Litte edian Format which means that the value is in reverse order so if we remove the value in revrerse order and convert to hex the pattern in the EIP will be 4Ar5 i have Demostrate the by using python3 interpreter manually finding the cyclic paattern as it is an Good Pratice**
+ **in my case the EIP value is 35724134 now in the he stack the value is stored in the Litte edian Format which means that the value is in reverse order so if we remove the value in revrerse order and convert to hex the pattern in the EIP will be 4Ar5 i have Demostrate the by using python3 interpreter manually finding the cyclic paattern as it is a Good Pratice**
  
  <br />
  
@@ -145,9 +145,18 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 ![match](https://user-images.githubusercontent.com/102399357/232202971-a81da0b2-3ec0-42db-8302-ff4236c6a1b1.png)
 
+<br />
+
 >***/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -q 4Ar5***
 
-**In the above command the script will search for the pattern "4Ar5" within the input data and return the offset of the pattern if it is found.So in our Case the _extremely_Offset is Found To Be 524_extremely_**
+<br />
+
+**In the above command the script will search for the pattern "4Ar5" within the input data and return the offset of the pattern if it is found.So in our Case the  Offset is Found To Be 524**
+
+
+<br />
+
+###Now we have found Our Offset which is 524 Now if We Write Anything more than 524 Bytes it will be overwrittend on EIP Register.
 
 
  
