@@ -17,7 +17,9 @@
 
 >***Aim :- Exploiting BrainPan.exe and gaining Reverse Shell Access***
 
-
+<br />
+![image](https://user-images.githubusercontent.com/102399357/232212755-be1039e0-6cf5-40ba-a834-fa1afb2c14e9.png)
+<br />
 
 ***NOTE :- Make sure that You Turn Off Your Anitvirus and Windows defender*** 
 
@@ -83,9 +85,17 @@ while True:
 <br />
 
 ## Step 2 Finding the Offset <br />
+***what is EIP Registor? <br />
+EIP stands for "Extended Instruction Pointer" and is a register in the x86 architecture, which is used to store the memory address of the next instruction to be executed by the CPU. When a program is executed, the CPU reads the instructions from memory sequentially, and the value of EIP is updated to point to the next instruction to be executed.
+In the context of software vulnerabilities and exploits, an attacker may attempt to modify the value of EIP to redirect the flow of execution to a malicious payload, typically located in the attacker's controlled memory region. This is often achieved by exploiting a buffer overflow vulnerability, where the attacker supplies more data than a buffer can hold, overwriting adjacent memory locations, including EIP. By controlling EIP, the attacker can redirect the flow of execution to their own code, allowing them to execute arbitrary commands or gain unauthorized access to a system.***
+
+<br />
+<br />
 
 ***what is offset? <br />
    When you are overflowing a buffer to write on the stack in a way which is exploitable you will overwrite the return address on the stack. Ie, sending a long string of AAAAAAAAAAAAAAAAAAAAAAAAAAA.....AAAAAAAAA will result in EIP containing the value 0x41414141 when the application crashes.***
+
+<br />
 
 **Now assume that if we pass "A" into 10 times + "B" into 4 times and in EIP we see that the EIP value is 42424242 so the offset will be 10bytes Because we see that after 10 "A"'s any value we provide to the string it gets overwritten to the EIP value**
 
@@ -400,6 +410,11 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
+<br />
+
+![image](https://user-images.githubusercontent.com/102399357/232212220-1a4f8ed4-3648-4119-baa8-8a96e2fb0963.png)
+
+<br />
 
 ## And thats How i Exploted My First Buffer Overflow 
 
