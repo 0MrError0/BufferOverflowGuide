@@ -21,8 +21,7 @@
 
 ***NOTE :- Make sure that You Trun Off Your Anitvirus and Windows defender*** 
 
-## step 1 :- Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file!
-then click on the paly button so that the brainpan.exe is in running mode
+## step 1 :- Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file! then click on the paly button so that the brainpan.exe is in running mode
 
 
 
@@ -30,7 +29,7 @@ then click on the paly button so that the brainpan.exe is in running mode
           
           
          
-        ![base1](https://user-images.githubusercontent.com/102399357/232190717-ebf05de6-197f-46dd-a24c-fced26ef0e06.PNG)
+        [base1](https://user-images.githubusercontent.com/102399357/232190717-ebf05de6-197f-46dd-a24c-fced26ef0e06.PNG)
 
 
 
