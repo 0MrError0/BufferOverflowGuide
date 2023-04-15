@@ -97,7 +97,9 @@ while True:
 
 **The script will generate a unique pattern of length 650 bytes, which is used for identifying the offset. The "-l" option is followed by the length of the pattern in bytes.Over hear i have specified 650 bytes because when we runed our Fuzzing Progarming we saw that the program got craashed at 600 bytes Right ? 
 So the prgram offset can be below 600 bytes or equal to 600 bytes so it is alway a good habit to give more 50 or 100 bytes to be on safe side.** 
+
 <br />
+
 ***Note :- If the "-l" option is not specified, the default pattern length of 8192 bytes is used.***
 
 
