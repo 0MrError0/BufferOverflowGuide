@@ -220,6 +220,37 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 ![bad_dump](https://user-images.githubusercontent.com/102399357/232206958-e31fd2a1-ea42-4f67-85cf-ed665eecb623.jpg)
 
 
-**If Youll Want To use mona Modules then youll can go for it**
+**If Youll Want To use mona Modules then youll can go for it But in this exploit i will not go in depth of badchars as in brainpan.exe ther are no badchars except "\x00" which is an universal badchar**
+
+## Step 4 Finding the Right Module.
+
+>**If we Type !mona modules we see that **
+
+![eip_vuln_all_False](https://user-images.githubusercontent.com/102399357/232207719-dcbe0868-9373-4b63-9440-c975f59908ea.png)
+
+<br />
+
+### In the above we see that Brainpan.exe itsef it Vuln and all the Stcak Protections are Beinged Set to False ALR which is Address space layout Randomization NEX Non executable stack ,SEH etc.
+
+<br />
+
+**Now we should find such module which jumps to esp whitout containg "\x00" char which is an Universal BAD Char**
+
+<br />
+
+>**Type !mona jmp -r esp -cbp "\x00"**
+
+**This command finds all "jmp esp" (or equivalent) instructions with addresses that don't contain any of the badchars specified. The results should display in the "Log data" window (use the Window menu to switch to it if needed).**
+
+<br />
+
+![vuln_address_eip](https://user-images.githubusercontent.com/102399357/232207955-8c600b80-e391-4001-9cce-2c3c64620c1d.png)
+
+<br />
+
+**We see that the only brainpan.exe itself is having it and over hear we need to know the stack base Address as we will need that Stack Base Address in the Furture**
+
+<br />
+
 
 
