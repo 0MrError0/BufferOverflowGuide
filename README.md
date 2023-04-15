@@ -67,4 +67,19 @@ while True:
 		sys.exit(0)
 	i=i+100
 ```
-***In The First Line of Code i have Imported some modules. I have declared some variables IP ( To set Ip Addr ) and i value to 100 for Counter purpose. Now in while True loop which is infinet loop i have added try and except block in which i have created a socket object refeared as c in which i set the timeout to 5 sec and then connect to the desire Ip address and Port Number of my Host machine. following that we recive the bufffer which is the banner and Enter Password Text after receving the buffer i have created the string variable in which i create "A" into 100 times at the first entry time and then we send the string with "\r\n" which is Used as a new line character in Windows And then we print how may bytes was send of "A" 's and then we recv the buffer saying that Access Denied in except block we print out that at how many bytes the program was crashed and then exit the program and if the the program was not crashed it incriments the i value t0 +100. and the program is continued until the .exe is being crashed...!***
+***In The First Line of Code i have Imported some modules. I have declared some variables IP ( To set Ip Addr ) and i value to 100 for Counter purpose. Now in while True loop which is infinet loop i have added try and except block in which i have created a socket object refeared as c in which i set the timeout to 5 sec and then connect to the desire Ip address and Port Number of my Host machine. following that we recive the bufffer which is the banner and Enter Password Text after receving the buffer i have created the string variable in which i create "A" into 100 times at the first entry time and then we send the string with "\r\n" which is Used as a new line character in Windows And then we print how may bytes was send of "A" 's and then we recv the buffer saying that Access Denied in except block we print out that at how many bytes the program was crashed and then exit the program and if the the program was not crashed it incriments the i value t0 +100. and the program is continued until the .exe is being crashed...!***<br />
+
+
+>***Python3 Fuzz.py***
+<br />
+
+![Fuzz](https://user-images.githubusercontent.com/102399357/232196177-caed504b-2f25-4b97-bda8-55a3b546e20b.PNG)
+
+<br />
+
+### As Soon as we run the script we see that the .exe Program gets Crashed at  600 bytes <br />
+![immuFuzz](https://user-images.githubusercontent.com/102399357/232196264-1670e72a-9ea2-4fdb-97ef-0f0dfb3109e3.PNG)
+
+
+
+
