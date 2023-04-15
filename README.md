@@ -30,3 +30,6 @@
 ### Then the .exe will start Running on the Host With Port Number 9999
 
 ![runnning](https://user-images.githubusercontent.com/102399357/232191959-ab9db141-5b4f-4e98-a922-214048c3bbd5.PNG)
+
+
+## As we Now the .exe is serving on port 9999 now let us fuzz the input if the exe 
