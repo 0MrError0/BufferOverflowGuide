@@ -21,7 +21,7 @@
 
 ***NOTE :- Make sure that You Trun Off Your Anitvirus and Windows defender*** 
 
-## step 1 :- Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file! then click on the paly button so that the brainpan.exe is in running mode
+## Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file! then click on the paly button so that the brainpan.exe is in running mode
 
 
 
@@ -31,9 +31,16 @@
 
 ![runnning](https://user-images.githubusercontent.com/102399357/232191959-ab9db141-5b4f-4e98-a922-214048c3bbd5.PNG)
 
-
+<br />
 ### As we Now know that the .exe is serving on port 9999 now let us Fuzz the input of the brainpan.exe 
-
-***What is Fuzzing ? <br />
+<br /><br />
+***What is Fuzzing ? <br /><br />
 In programming and software development, fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. The program is then monitored for exceptions such as crashes, failing built-in code assertions, or potential memory leaks. Typically, fuzzers are used to test programs that take structured inputs <br /> (Shameless copied from Wikipedia)*** 
+
+<br /><br />
+
+## Step 1 Fuzzing <br />
+### The Following Python Script is Useed to Fuzz The brainpan.exe service <br /><br />
+
+
 
