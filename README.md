@@ -7,7 +7,7 @@
 
 Requiments :- Immunity Debugger , VirtualBox in Windows7.
 
-Aim :- Exploiting BrainPan.exe and gaining Reverse Shell Access
+> Aim :- Exploiting BrainPan.exe and gaining Reverse Shell Access
 
 As i was facing some issue with my windows7 machine i use my host machine to exploit this brainpan.exe file 
 
