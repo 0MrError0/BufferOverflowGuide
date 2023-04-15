@@ -7,7 +7,7 @@
 
 
 
->__***Requiments :- Immunity Debugger , VirtualBox in Windows7.***__
+>***Requiments :- Immunity Debugger , VirtualBox in Windows7.***
 
 
 
@@ -23,4 +23,8 @@
 
 ###step 1 :- Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file
           then click on the paly button so that the brainpan.exe is in running mode
+          
+          
+          ![base1](https://user-images.githubusercontent.com/102399357/232190512-dc1f5592-5d47-41d9-abd0-4dab35681ff1.PNG)
+
           
