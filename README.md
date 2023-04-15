@@ -365,8 +365,10 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 	print("[!]Malicious Buffer Send Sucessfully ;-)")
 	c.close()
  ```
+ 
+<br />
 
-**in the above code i am imported soome required modules furture i have created varibles named offset which is set to 524 junk var which is set to A into offest new_eip inwhich i have packed the Base address of the stack which we have found in Step 5 in Little Edian Format after that i have set paddig which are also knonw as nops means Do nothing which i is represteted in \x90 format i have generated padding into 30 times pagging will created some distance from EIP till ShellCode so that the it do not affect the program execution but serve to pad the payload and provide extra space for the exploit code to be inserted. The NOPs can be used to ensure that the exploit code is executed properly and that it starts at a specific memory address. After all the stuff make sure you Activated the Listiner On Your Linux Machine.**
+**in the above code i have imported some required modules furture i have created varibles named offset which is set to 524 junk var which is set to A into offest new_eip inwhich i have packed the Base address of the stack which we have found in Step 5 in Little Edian Format after that i have set paddig which are also knonw as nops means Do nothing which i is represteted in \x90 format i have generated padding into 30 times pagging will created some distance from EIP till ShellCode so that the it do not affect the program execution but serve to pad the payload and provide extra space for the exploit code to be inserted. The NOPs can be used to ensure that the exploit code is executed properly and that it starts at a specific memory address. After all the stuff make sure you Activated the Listiner On Your Linux Machine.**
 
 
 <br />
@@ -390,7 +392,7 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 <br />
 
 
-**We Can see That our Payload hase Been Sucessfully Sended..! Now if we see our Listiner Shell BOOMMMMMMM AND WE GOT THE SHELL FINALLY.**
+**We Can see That our Payload has Been Sucessfully Sended..! Now if we see our Listiner Shell BOOMMMMMMM AND WE GOT THE SHELL FINALLY.**
 
 <br />
 
