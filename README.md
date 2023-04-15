@@ -25,14 +25,5 @@
 
 
 
-          
-          ![running](https://user-images.githubusercontent.com/102399357/232191628-252e6d78-c62d-4981-b803-caa491dc1ba5.PNG)
-
-          
-
-
- 
-
-![runnning](https://user-images.githubusercontent.com/102399357/232191433-21cff201-cbe8-43a0-98ee-56d464ff26ed.PNG)
-
-
+![base1](https://user-images.githubusercontent.com/102399357/232191877-6de2882f-c0ec-4a07-83a8-48271ea833b1.PNG)
+![runnning](https://user-images.githubusercontent.com/102399357/232191959-ab9db141-5b4f-4e98-a922-214048c3bbd5.PNG)
