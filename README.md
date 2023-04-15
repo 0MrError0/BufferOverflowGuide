@@ -18,7 +18,7 @@
 >***Aim :- Exploiting BrainPan.exe and gaining Reverse Shell Access***
 
 <br />
-![image](https://user-images.githubusercontent.com/102399357/232212755-be1039e0-6cf5-40ba-a834-fa1afb2c14e9.png)
+ ![aaaaaaa1111](https://user-images.githubusercontent.com/102399357/232214135-f2f77ef8-534c-4a09-9436-88a8cf92446b.gif)
 <br />
 
 ***NOTE :- Make sure that You Turn Off Your Anitvirus and Windows defender*** 
@@ -412,9 +412,9 @@ with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as c:
 
 <br />
 
-![image](https://user-images.githubusercontent.com/102399357/232212220-1a4f8ed4-3648-4119-baa8-8a96e2fb0963.png)
+![image](https://user-images.githubusercontent.com/102399357/232214038-db5cabcf-b1b8-422d-9c38-f53f948b6bf2.png)
 
 <br />
 
-## And thats How i Exploted My First Buffer Overflow 
+## And thats How i Exploited My First Buffer Overflow 
 
