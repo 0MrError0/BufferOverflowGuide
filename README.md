@@ -28,8 +28,7 @@
           
           
           
-         
-        [base1](https://user-images.githubusercontent.com/102399357/232190717-ebf05de6-197f-46dd-a24c-fced26ef0e06.PNG)
+ 
 
 
 
