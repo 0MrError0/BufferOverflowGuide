@@ -21,7 +21,7 @@
 
 ***NOTE :- Make sure that You Trun Off Your Anitvirus and Windows defender*** 
 
-## Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file! then click on the paly button so that the brainpan.exe is in running mode
+### Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file! then click on the paly button so that the brainpan.exe is in running mode
 
 
 
@@ -84,6 +84,6 @@ while True:
 ***what is offset? <br />
    When you are overflowing a buffer to write on the stack in a way which is exploitable you will overwrite the return address on the stack. Ie, sending a long string of AAAAAAAAAAAAAAAAAAAAAAAAAAA.....AAAAAAAAA will result in EIP containing the value 0x41414141 when the application crashes.***
 
-**Now assume that if we pass "A" into 10 times + "B" into 4 times and in EIP we see that the EIP value is 42424242 so the offset will be 10bytes**
+**Now assume that if we pass "A" into 10 times + "B" into 4 times and in EIP we see that the EIP value is 42424242 so the offset will be 10bytes Because we see that after 10 "A"'s any value we provide to the string it gets overwritten to the EIP value**
 
 
