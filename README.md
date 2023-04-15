@@ -40,7 +40,7 @@ In programming and software development, fuzzing or fuzz testing is an automated
 
 
 ## Step 1 Fuzzing <br />
-### The Following Python Script is Useed to Fuzz The brainpan.exe service <br />
+### The Following Python Script is Used to Fuzz The brainpan.exe service <br />
 
 ```python
 import socket
@@ -67,4 +67,4 @@ while True:
 		sys.exit(0)
 	i=i+100
 ```
-
+### In The First Line of Code i have Imported some modules after that i have declared some variables IP ( To set Ip Addr ) and i value to 100 for Counter purpose. Now in while True loop which is infinet loop i have added try and except block in which i have created a socket object refeared as c in wthich i set the timeout to 5 sec and then connect to the desire Ip address and Port Number of my Host machine. After that we recive the bufffer which is the banner and Enter Password Text after receving the buffer we hav created the string variable in which we create "A" into 100 times at the firset entry time and ten we send the string with "\r\n" which is  Used as a new line character in Windows And then we print how may bytes wear send of "A" 's and then we recv the buffer saying thet Access Denied in except block we print out that at how many bytes the program was crashed and then exit the program and if the the program was not crashed it incriments the i value t0 +100.
