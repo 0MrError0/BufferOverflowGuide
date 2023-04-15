@@ -18,10 +18,11 @@
 >***Aim :- Exploiting BrainPan.exe and gaining Reverse Shell Access***
 
 <br />
- ![aaaaaaa1111](https://user-images.githubusercontent.com/102399357/232214135-f2f77ef8-534c-4a09-9436-88a8cf92446b.gif)
-<br />
 
 ***NOTE :- Make sure that You Turn Off Your Anitvirus and Windows defender*** 
+
+<br  />
+
 
 ### Open Immunity Debugger in Administrator Mode and click on file >> open >> and select the brainpan.exe file! then click on the paly button so that the brainpan.exe is in running mode
 
