@@ -79,11 +79,24 @@ while True:
 
 ![immuFuzz](https://user-images.githubusercontent.com/102399357/232196264-1670e72a-9ea2-4fdb-97ef-0f0dfb3109e3.PNG)
 
-### Now we know that our .exe was crashing at 600 bytes but we actually dont know the Exact offset value 
+### Now we know that our .exe was crashing at 600 bytes but we actually dont know the Exact offset value.
+<br />
+
+## Step 2 Finding the Offset <br />
 
 ***what is offset? <br />
    When you are overflowing a buffer to write on the stack in a way which is exploitable you will overwrite the return address on the stack. Ie, sending a long string of AAAAAAAAAAAAAAAAAAAAAAAAAAA.....AAAAAAAAA will result in EIP containing the value 0x41414141 when the application crashes.***
 
 **Now assume that if we pass "A" into 10 times + "B" into 4 times and in EIP we see that the EIP value is 42424242 so the offset will be 10bytes Because we see that after 10 "A"'s any value we provide to the string it gets overwritten to the EIP value**
+
+### Now in real scenario we cannot guess the offset by hitting random value Again and Again this might be vary time consuming for that we have a tearm called Cyclic Pattern generator in kali linux it comes with pre installed in metsploit. <br />
+
+
+![cyclic](https://user-images.githubusercontent.com/102399357/232198783-84422f9f-f855-4aae-8158-9c24482c51e0.PNG)
+
+
+**The script will generate a unique pattern of length 650 bytes, which is used for identifying the offset. The "-l" option is followed by the length of the pattern in bytes. If the "-l" option is not specified, the default pattern length of 8192 bytes is used. **
+
+
 
 
