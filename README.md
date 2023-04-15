@@ -89,13 +89,16 @@ while True:
 
 **Now assume that if we pass "A" into 10 times + "B" into 4 times and in EIP we see that the EIP value is 42424242 so the offset will be 10bytes Because we see that after 10 "A"'s any value we provide to the string it gets overwritten to the EIP value**
 
-### Now in real scenario we cannot guess the offset by hitting random value Again and Again this might be vary time consuming for that we have a tearm called Cyclic Pattern generator in kali linux it comes with pre installed in metsploit. <br />
+### Now in real scenario we cannot guess the offset by hitting random value Again and Again this might be very time consuming for that we have a term called Cyclic Pattern generator in kali linux it comes with pre installed in metasploit. <br />
 
 
 ![cyclic](https://user-images.githubusercontent.com/102399357/232198783-84422f9f-f855-4aae-8158-9c24482c51e0.PNG)
 
 
-**The script will generate a unique pattern of length 650 bytes, which is used for identifying the offset. The "-l" option is followed by the length of the pattern in bytes. If the "-l" option is not specified, the default pattern length of 8192 bytes is used. **
+**The script will generate a unique pattern of length 650 bytes, which is used for identifying the offset. The "-l" option is followed by the length of the pattern in bytes.Over hear i have specified 650 bytes because when we runed our Fuzzing Progarming we saw that the program got craashed at 600 bytes Right ? 
+So the prgram offset can be below 600 bytes or equal to 600 bytes so it is alway a good habit to give more 50 or 100 bytes to be on safe side.** 
+<br />
+***If the "-l" option is not specified, the default pattern length of 8192 bytes is used.***
 
 
 
